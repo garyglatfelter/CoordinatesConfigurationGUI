@@ -1,2 +1,11 @@
 # CoordinatesConfigurationGUI
 This tool is intended to provide a more accessible and user-friendly way of changing coordinates for the AcceptanceSheetLotPrint program.
+
+
+
+Starting with version 1.58 of AcceptanceSheetLotPrint (aka PFT print tool, Java print tool, or print tool) the program will first search the folder "C:\pft-print-tool" for a file called "config-file.properties" in order to see if coordinates have been manually specified. These coordinates tell the program what locations to add text to the finished PFT report. If the file cannot be found, it will default to the coordinates used in version 1.57.
+
+Running "CoordinatesConfigurationGUI-1.0-jar-with-dependencies" will start up a graphical interface to set these coordinates. Modify the coordinates as needed, and then click the "Generate Coordinates File" button. It will then save the file and open the directory "C:\pft-print-tool". You may copy this folder to other computers. Presumably that would be the most efficient way to make adjustments for changes in the layout of EQ-0056-SCR and update each computer; however you may also set up each computer by running the coordinates configuration tool at each staion, if preferred. As long as the computer is using version 1.58 or greater, the PFT print tool will search for "C:\pft-print-tool\config-file.properties" when you click the "Print" button in the PFT print tool.
+
+When it comes to setting up the X and Y coordinates, you may run the Configutation Tool and the PFT print tool simultaneously in order to set the values, check if it looks right, and repeat as needed. If you select "Printer Microsoft to PDF" in the printer selection, you can save directly to a file instead of printing a bunch of papers. The X and Y coordinates work similarly to how it would look if you held a graph from math class over the page. Greater values for x move further to the right and greater values of y move further to the top of the page.
+( x = 0, y = 0 corresponds to the lower left corner of the page. x = 600, y = 800 corresponds to the top right corner of the page.)

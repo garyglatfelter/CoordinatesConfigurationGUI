@@ -50,7 +50,7 @@ public class CoordinatesGUI extends Application {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Text scenetitle = new Text("Acceptance Sheet Print Tool - Configuration Tool ");
+        Text scenetitle = new Text("Acceptance Sheet Print Tool - Configuration Tool v1.1");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         grid.add(scenetitle, 0, 0, 2, 1);
         

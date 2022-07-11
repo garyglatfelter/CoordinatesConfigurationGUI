@@ -29,9 +29,9 @@ public class Coordinates {
         CHECKMARK_EQ002003_X(10, "MAIN COVER SHEET: Checkbox EQ002003 - The x coordinate", 476),
         CHECKMARK_EQ002003_Y(11, "Y coordinate: ", 607),
         OPERATOR_X(12, "PFT REPORT: operator printed name - The x coordinate: ", 80),
-        OPERATOR_Y(13, "Y coordinate: ", 80),
+        OPERATOR_Y(13, "Y coordinate: ", 670),
         SIGN_DATE_X(14, "PFT REPORT: date - The x coordinate: ", 420),
-        SIGN_DATE_Y(15, "Y coordinate: ", 80),
+        SIGN_DATE_Y(15, "Y coordinate: ", 670),
         FAILURE_COVER_SHEET_PAGE(16, "EQ-0056-SCR: The page number of failure cover sheet", 5),
         MAIN_COVER_SHEET_PAGE(17, "EQ-0056-SCR: The page number of main cover sheet", 4),;
 
@@ -88,55 +88,55 @@ public class Coordinates {
     /**
      * This is the x coordinate for the operator printed name in the PFT report
      */
-    private int operatorX = 80;
+    private int operatorX = CoordConstants.OPERATOR_X.defaultValue;
 
     /**
      * This is the y coordinate for the operator printed name in the PFT report
      */
-    private int operatorY = 80;
+    private int operatorY = CoordConstants.OPERATOR_Y.defaultValue;
 
     /**
      * This is the x coordinate for the date that goes next to operator's
      * signature in the PFT report
      */
-    private int signDateX = 420;
+    private int signDateX = CoordConstants.SIGN_DATE_X.defaultValue;
 
     /**
      * This is the y coordinate for the date that goes next to operator's
      * signature in the PFT report
      */
-    private int signDateY = 80;
+    private int signDateY = CoordConstants.SIGN_DATE_Y.defaultValue;
 
     /**
      * This is the x coordinate of the checkbox for selecting part EQ002002A
      */
-    private int checkmarkEQ002002A_X = 389;
+    private int checkmarkEQ002002A_X = CoordConstants.CHECKMARK_EQ002002A_X.defaultValue;
 
     /**
      * This is the y coordinate of the checkbox for selecting part EQ002002A
      */
-    private int checkmarkEQ002002A_Y = 607;
+    private int checkmarkEQ002002A_Y = CoordConstants.CHECKMARK_EQ002002A_Y.defaultValue;
 
     /**
      * This is the x coordinate of the checkbox for selecting part EQ002003
      */
-    private int checkmarkEQ002003_X = 476;
+    private int checkmarkEQ002003_X = CoordConstants.CHECKMARK_EQ002003_X.defaultValue;
 
     /**
      * This is the y coordinate of the checkbox for selecting part EQ002003
      */
-    private int checkmarkEQ002003_Y = 607;
+    private int checkmarkEQ002003_Y = CoordConstants.CHECKMARK_EQ002003_Y.defaultValue;
     /**
      * This is the page number of EQ-0056 where the cover sheet for recording
      * failures found
      */
-    private int failureCoverSheetPage = 5;
+    private int failureCoverSheetPage = CoordConstants.FAILURE_COVER_SHEET_PAGE.defaultValue;
 
     /**
      * This is the page number of EQ-0056 where the main cover sheet for pft
      * acceptance can be found.
      */
-    private int mainCoverSheetPage = 4;
+    private int mainCoverSheetPage = CoordConstants.MAIN_COVER_SHEET_PAGE.defaultValue;
 
     public Coordinates() {
     }
@@ -289,8 +289,6 @@ public class Coordinates {
     public String toString() {
         return "Coordinates{" + "serialNumX=" + serialNumX + ", serialNumY=" + serialNumY + ", lotNumX=" + lotNumX + ", lotNumY=" + lotNumY + ", stationNumX=" + stationNumX + ", stationNumY=" + stationNumY + ", dateX=" + dateX + ", dateY=" + dateY + ", operatorX=" + operatorX + ", operatorY=" + operatorY + ", signDateX=" + signDateX + ", signDateY=" + signDateY + ", checkmarkEQ002002A_X=" + checkmarkEQ002002A_X + ", checkmarkEQ002002A_Y=" + checkmarkEQ002002A_Y + ", checkmarkEQ002003_X=" + checkmarkEQ002003_X + ", checkmarkEQ002003_Y=" + checkmarkEQ002003_Y + ", failureCoverSheetPage=" + failureCoverSheetPage + ", mainCoverSheetPage=" + mainCoverSheetPage + '}';
     }
-    
-    
 
     public static void main(String[] args) {
 
@@ -315,7 +313,7 @@ public class Coordinates {
 
         ObjectMapper mapper = new ObjectMapper();
         Coordinates coord = new Coordinates();
-        
+
         coord.setSerialNumX(155);
         coord.setSerialNumY(568);
         coord.setLotNumX(300);
@@ -334,13 +332,12 @@ public class Coordinates {
         coord.setCheckmarkEQ002003_Y(607);
         coord.setFailureCoverSheetPage(5);
         coord.setMainCoverSheetPage(4);
-        
+
         //update
         coord.setSerialNumX(1);
         coord.setSerialNumY(2);
         coord.setLotNumX(3);
         coord.setLotNumY(4);
-        
 
         try {
             mapper.writerWithDefaultPrettyPrinter()
